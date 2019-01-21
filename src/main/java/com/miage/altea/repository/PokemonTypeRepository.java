@@ -4,12 +4,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.miage.altea.bo.PokemonType;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class PokemonTypeRepository {
 
-    private List<PokemonType> pokemons;
+    private List<PokemonType> pokemons = new ArrayList<>();
 
     public PokemonTypeRepository() {
         try {
@@ -17,7 +18,7 @@ public class PokemonTypeRepository {
 
             var objectMapper = new ObjectMapper();
             var pokemonsArray = objectMapper.readValue(pokemonsStream, PokemonType[].class);
-            this.pokemons = Arrays.asList(pokemonsArray);
+            this.pokemons.addAll(Arrays.asList(pokemonsArray));
         } catch (IOException e) {
             e.printStackTrace();
         }
