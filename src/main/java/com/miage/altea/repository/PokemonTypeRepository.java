@@ -10,7 +10,7 @@ import java.util.List;
 
 public class PokemonTypeRepository {
 
-    private List<PokemonType> pokemons = new ArrayList<>();
+    private static List<PokemonType> pokemons = new ArrayList<>();
 
     public PokemonTypeRepository() {
         try {
