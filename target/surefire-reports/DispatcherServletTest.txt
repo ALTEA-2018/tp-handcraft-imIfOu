@@ -1,0 +1,68 @@
+-------------------------------------------------------------------------------
+Test set: DispatcherServletTest
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 7, Errors: 0, Skipped: 0, Time elapsed: 0.496 s <<< FAILURE! - in DispatcherServletTest
+doGet_shouldReturn404_whenNotMethodIsFound  Time elapsed: 0.367 s  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+httpServletResponse.sendError(
+    404,
+    "no mapping found for request uri /test"
+);
+-> at DispatcherServletTest.doGet_shouldReturn404_whenNotMethodIsFound(DispatcherServletTest.java:76)
+Actually, there were zero interactions with this mock.
+
+	at DispatcherServletTest.doGet_shouldReturn404_whenNotMethodIsFound(DispatcherServletTest.java:76)
+
+registerController_throwsIllegalArgumentException_forNonControllerClasses  Time elapsed: 0.005 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
+	at DispatcherServletTest.registerController_throwsIllegalArgumentException_forNonControllerClasses(DispatcherServletTest.java:18)
+
+doGet_shouldReturnAResult_whenMethodSucceeds  Time elapsed: 0.092 s  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+printWriter.print("Hello");
+-> at DispatcherServletTest.doGet_shouldReturnAResult_whenMethodSucceeds(DispatcherServletTest.java:110)
+Actually, there were zero interactions with this mock.
+
+	at DispatcherServletTest.doGet_shouldReturnAResult_whenMethodSucceeds(DispatcherServletTest.java:110)
+
+doGet_shouldReturnAResult_forHelloController  Time elapsed: 0.002 s  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+printWriter.print("Hello World !");
+-> at DispatcherServletTest.doGet_shouldReturnAResult_forHelloController(DispatcherServletTest.java:146)
+Actually, there were zero interactions with this mock.
+
+	at DispatcherServletTest.doGet_shouldReturnAResult_forHelloController(DispatcherServletTest.java:146)
+
+doGet_shouldReturnAResult_whenMethodWithParametersSucceeds  Time elapsed: 0.002 s  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+printWriter.print("12");
+-> at DispatcherServletTest.doGet_shouldReturnAResult_whenMethodWithParametersSucceeds(DispatcherServletTest.java:129)
+Actually, there were zero interactions with this mock.
+
+	at DispatcherServletTest.doGet_shouldReturnAResult_whenMethodWithParametersSucceeds(DispatcherServletTest.java:129)
+
+doGet_shouldReturn500WithMessage_whenMethodThrowsException  Time elapsed: 0.002 s  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+httpServletResponse.sendError(
+    500,
+    "exception when calling method someThrowingMethod : some exception message"
+);
+-> at DispatcherServletTest.doGet_shouldReturn500WithMessage_whenMethodThrowsException(DispatcherServletTest.java:91)
+Actually, there were zero interactions with this mock.
+
+	at DispatcherServletTest.doGet_shouldReturn500WithMessage_whenMethodThrowsException(DispatcherServletTest.java:91)
+
+registerController_doesNotRegisters_voidReturningMethods  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at DispatcherServletTest.registerController_doesNotRegisters_voidReturningMethods(DispatcherServletTest.java:39)
+
